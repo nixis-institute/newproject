@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login page</title>
+</head>
+<body bgcolor="orange">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="text-align: center;">
+            <form action="/Login_data/" method="POST">
+                {% csrf_token %}
+                Username :- <input type="text" name="Username" placeholder="Username" required>
+                <br>
+                <br>
+                Passward :- <input type="password" name="pass" placeholder="Passward" required>
+                <br>
+                <br>
+                <input type="submit" value="Submit" style="font-size: larger;">
+            </form>
+        </div>
+</body>
+</html>

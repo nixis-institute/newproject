@@ -1,0 +1,52 @@
+<style>
+.my_blog{
+    font-size: 50px;
+    text-align: center;
+    background-color: orange;
+}
+
+.form_contain{
+    /* background-color: aquamarine; */
+}
+
+
+
+
+</style>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create page</title>
+</head>
+<body bgcolor="cyan">  
+
+            <div class="my_blog">
+                    <span>My blogs</span>
+            </div>
+            <div class="form_contain" style="padding-left: 100px;padding-top: 70px;">
+                <form action="/Ctable/" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="Title" placeholder="Title" required>
+                    <br>
+                    <br>
+                    <!-- <input type="text" name="cont" placeholder="Contain"> -->
+                    <textarea name="cont" id="" cols="130" rows="10" placeholder="Contain" required></textarea>
+                    <br>
+                    <br>
+                    <input type="text" name="Aname" placeholder="Author name" required>
+                    <br>
+                    <br>
+                    <!-- <input type="text" name="date" placeholder="Date"> -->
+                    <!-- <input type="text" name="publish" placeholder="Publish"> -->
+                    <input type="submit" value="Created">    
+                </form>
+            </div>
+</body>
+</html>

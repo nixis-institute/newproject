@@ -1,0 +1,97 @@
+<style>
+.loop_part1{
+    padding-left: 30px;
+}
+.block{
+    background-color: whitesmoke;
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: 6px 6px 5px #888888;
+}
+
+.information{
+    display: flex;
+    flex-flow: row;
+    float: right;
+}
+
+.information div{
+    padding-right: 30px;
+    font-size: 23px;
+    font-weight: bold
+    /* cursor: pointer; */
+}
+
+.Loop_part3{
+    font-size: smaller;
+    font-weight: bold;
+    border: 2px solid;
+}
+
+/* .Loop_part3.p{
+    position: relative;
+    left: 20px; */
+/* } */
+
+
+</style>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+</head>
+<body   bgcolor="orange">
+                <div class="information">
+                    <div><p> <a href="/About/">About</a> </p></div> 
+                    <div><p> Policy </p></div>
+                    <div><p> Contact </p></div>
+                </div>
+                <div style="padding-top: 1px;">
+                    <p style="font-size: 50px;text-align: center;color: blue;background-color: cyan;"><b>My Blogs</b></p s>
+                </div>        
+                <a href="/Login/" style="padding-bottom: 10px;">
+                    <p   style="text-align: right;padding-right: 30px;font-size: 30px;"><b>Login</b></p>
+                </a>
+                        
+            <!-- </button> -->
+    <div class="Loop_part1">
+            <!-- <br> -->
+            <!-- <br> -->
+            <div class="Loop_part2">
+                {% for i in T %}
+                <div class="block">
+                    <h1 style="color: white;cursor:auto;"> <a href="/Title/{{i.id}}/">{{i.title}}</a> </h1 >
+                    <div class="Loop_part3">
+                        <span style="position: relative;left: 6px;">{{i.contain}}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            
+
+            <!-- <div class="Loop_part3">
+                    {% for i in T%}
+                        <p>{{i.contain}}</p>
+                    {% endfor %} -->
+            </div>
+            </div>
+            <br>
+            
+            <br>
+        </div>
+        <a href="/CreateTable/"><h3 style="text-align: left;padding-left: 100px;">
+        <!-- <input type="button"> -->
+        <button type="button" style="font-size: large;">Create</button>
+        
+    </h3></a>
+
+</body>
+</html>
