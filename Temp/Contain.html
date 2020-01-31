@@ -5,17 +5,29 @@
 /* text-align: left;
 left: 32px;
 position: relative; */
-padding-left: 40px;
+padding-left: 30px;
 text-align: left;
 font-size: 55px;
-background-color: red;
+background-color: silver;
 }
 
+span{
+        margin: 0;
+}
 .contain_table{
-position: relative;
-left: 62px;
+
 text-align: left;
 font-size: 24px;
+width: 63%;
+line-height: 28px;
+/* line-height: ;     */
+}
+
+.Create_blog{
+ float: right;
+ padding-right: 35px;
+ padding: 18px;
+
 }
 
 </style>
@@ -30,20 +42,26 @@ font-size: 24px;
     <title>Contain page</title>
 </head>
 <body>
-        <a href="/CreateTable/"><h3 style="text-align: right;padding-right: 5   0px;">
-                <!-- <input type="button"> -->
-                <button type="button" style="font-size: large;">Create</button>
+        
+</h3></a>
+<div class="Contain_with_title">
+        
+        <div class="Title_table">
+                <span>{{CP1.title}}</span>
                 
-            </h3></a>
-        <div class="Contain_with_title" style="text-align: center;color: black;">
-               
-                        <div class="Title_table">
-                                <span>{{CP1.title}}</span>
-                        </div>
+                <div class="Create_blog" style="float: right;">
+                        <span><a href="/CreateTable/">
+                        <span>
+                                <button type="button" style="font-size: medium;">Create</button>
+                        </span></a>
+                        </span>
+                </div>
+        </div>
                         <br>
                         <div class="Contain_table">
                                 <span>{{CP1.contain}}</span>
                         </div>
+                        
         </div>
 </body>
 </html>

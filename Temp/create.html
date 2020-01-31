@@ -5,12 +5,41 @@
     background-color: orange;
 }
 
-.form_contain{
-    /* background-color: aquamarine; */
+.Button{
+    font-size: 20px;
 }
 
+.form_contain.textarea{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
 
+.txarea{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
 
+/* .titarea{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+} */
+
+.information1{
+
+}
+
+.same1{
+    display: flex;
+    float: right;
+    padding: 9px;
+    padding-left: 8px;
+    padding-top: 20px;
+    font-size: 31px;
+}
+
+a{
+    text-decoration: none;
+}
 
 </style>
 
@@ -25,7 +54,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create page</title>
 </head>
-<body bgcolor="cyan">  
+<body bgcolor="whitesmoke">  
+
+            <div class="information1">
+
+
+                    <div class="same1"><span> <a href="/About/"> About </a> </span></div> 
+                    <div class="same1"><span> <a href="/policy/"> Policy </a> </span></div>
+                    <div class="same1"><span> <a href="/contact/"> Contact </a></span></div>
+            </div>
 
             <div class="my_blog">
                     <span>My blogs</span>
@@ -33,19 +70,19 @@
             <div class="form_contain" style="padding-left: 100px;padding-top: 70px;">
                 <form action="/Ctable/" method="POST">
                     {% csrf_token %}
-                    <input type="text" name="Title" placeholder="Title" required>
+                    <input class="titarea" type="text" name="Title" placeholder="Title" required>
                     <br>
                     <br>
                     <!-- <input type="text" name="cont" placeholder="Contain"> -->
-                    <textarea name="cont" id="" cols="130" rows="10" placeholder="Contain" required></textarea>
+                    <textarea class="txarea" name="cont" id="" cols="150" rows="22" placeholder="Contain" required></textarea>
                     <br>
-                    <br>
+                    <!-- <br>
                     <input type="text" name="Aname" placeholder="Author name" required>
-                    <br>
+                    <br> -->
                     <br>
                     <!-- <input type="text" name="date" placeholder="Date"> -->
                     <!-- <input type="text" name="publish" placeholder="Publish"> -->
-                    <input type="submit" value="Created">    
+                    <input class="Button" type="submit" value="Created">    
                 </form>
             </div>
 </body>

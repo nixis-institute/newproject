@@ -33,6 +33,9 @@ urlpatterns = [
     path("Title/<int:a>/",ContainPage),
     path("Login/",Login_page),
     path("Login_data/",LGdata),
-    path('About/',AboutPage)
+    path("logout/",Logout),
+    path('About/',AboutPage),
+    path('policy/',Policy),
+    path('contact/',Contact),
 ]
 

@@ -1,3 +1,23 @@
+<style>
+
+.Userpass{
+    font-size: 30px;
+
+}
+
+.Title_{
+    font-size: 20px;
+}
+
+</style>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,23 +26,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login page</title>
 </head>
-<body bgcolor="orange">
-        <br>
-        <br>
-        <br>
-        <br>
+<body bgcolor="">
+    <div class="Title_" style="text-align: center;background-color: brown;font-weight: bold;font-size: 20px;font-size: 50px;">
+        <p>My blogs</p>
+    </div>
         <br>
         <br>
         <div style="text-align: center;">
-            <form action="/Login_data/" method="POST">
+            <form action="/Login/" method="POST">
                 {% csrf_token %}
-                Username :- <input type="text" name="Username" placeholder="Username" required>
+                <div class="Userpass">
+                    Username :- <input type="text" name="username" placeholder="Username" required>
+                    <br>
+                    Passward :- <input type="password" name="password" placeholder="Passward" required>
+                </div>
                 <br>
-                <br>
-                Passward :- <input type="password" name="pass" placeholder="Passward" required>
-                <br>
-                <br>
-                <input type="submit" value="Submit" style="font-size: larger;">
+                <input style="text-align: center;" type="submit" value="Submit" style="font-size: larger;">
             </form>
         </div>
 </body>

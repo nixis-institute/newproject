@@ -3,30 +3,46 @@
     padding-left: 30px;
 }
 .block{
-    background-color: whitesmoke;
-    width: 60%;
+    /* text-align: center; */
+    background-color: white;
+    width: 53%;
     padding: 10px;
-    margin-bottom: 30px;
-    box-shadow: 6px 6px 5px #888888;
+    margin : 25px auto;
+    margin-bottom: 15px;
+    /* box-shadow: 3px 5px 7px #888888; */
+    color: black;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+
+
+}
+
+a{
+    text-decoration: none;
 }
 
 .information{
     display: flex;
     flex-flow: row;
     float: right;
+    padding-left: 20px;
+    padding: 15px;
 }
 
 .information div{
     padding-right: 30px;
-    font-size: 23px;
+    font-size: 27px;
     font-weight: bold
     /* cursor: pointer; */
 }
-
+p{
+    margin: 0;
+}
 .Loop_part3{
-    font-size: smaller;
-    font-weight: bold;
-    border: 2px solid;
+    font-size: 22px;
+    /* font-weight: bold; */
+    /* border: 2px solid; */
 }
 
 /* .Loop_part3.p{
@@ -34,6 +50,14 @@
     left: 20px; */
 /* } */
 
+
+.Author_name{
+    float: left;
+    /* padding-left: 7px; */
+    font-size: 20px;
+    color: grey;
+    font-weight: normal;
+}
 
 </style>
 
@@ -49,18 +73,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home page</title>
 </head>
-<body   bgcolor="orange">
+<body   bgcolor="whitesmoke">
                 <div class="information">
-                    <div><p> <a href="/About/">About</a> </p></div> 
-                    <div><p> Policy </p></div>
-                    <div><p> Contact </p></div>
+
+                    <div><p> <a href="/CreateTable/"> Create </p></div>
+                    <div><p> <a href="/About/"> About </a> </p></div> 
+                    <div><p> <a href="/policy/"> Policy </a> </p></div>
+                    <div><p> <a href="/contact/"> Contact </a></p></div>
+                    <div><p> <a href="/Login/"> Login </a></p></div>
+               
                 </div>
-                <div style="padding-top: 1px;">
-                    <p style="font-size: 50px;text-align: center;color: blue;background-color: cyan;"><b>My Blogs</b></p s>
+
+                <div>
+                    <p style="font-size: 50px;text-align: center;color: blue;background-color: cyan;"><b>My Blogs</b></p >
                 </div>        
-                <a href="/Login/" style="padding-bottom: 10px;">
-                    <p   style="text-align: right;padding-right: 30px;font-size: 30px;"><b>Login</b></p>
-                </a>
+                
+                    {% if user.is_authenticated %}
+                        <!-- {{user.username}} -->
+                        <a href="/logout/">
+                            <p style="text-align: right;padding-right: 30px;font-size: 30px;">
+                                <b>Logout</b>
+                            </p>
+                        </a>
+                        <p   style="text-align: right;padding-right: 30px;font-size: 30px;"><b>{{user.username}}</b></p>
+
+                    {% else %}
+                    <!-- <div>
+                        <a href="/Login/" style="padding-bottom: 10px;">
+                            <p   style="text-align: right;padding-right: 20px;font-size: 30px;"><b>Login</b></p>
+                        </a>
+                    </div> -->
+                    {% endif %}
+                
                         
             <!-- </button> -->
     <div class="Loop_part1">
@@ -69,7 +113,11 @@
             <div class="Loop_part2">
                 {% for i in T %}
                 <div class="block">
-                    <h1 style="color: white;cursor:auto;"> <a href="/Title/{{i.id}}/">{{i.title}}</a> </h1 >
+                    <p style="cursor: pointer"> <a href="/Title/{{i.id}}/"><p style="color: black;font-size: 30px;">{{i.title}}</p></a> <p >
+                        <div style="overflow: auto;">
+                            <span class="Author_name">Author name :- {{i.author}}</span>
+                            <span style="float: right;">{{i.Date }}</span>    
+                        </div>
                     <div class="Loop_part3">
                         <span style="position: relative;left: 6px;">{{i.contain}}</span>
                     </div>
@@ -87,10 +135,9 @@
             
             <br>
         </div>
-        <a href="/CreateTable/"><h3 style="text-align: left;padding-left: 100px;">
-        <!-- <input type="button"> -->
-        <button type="button" style="font-size: large;">Create</button>
-        
+        <!-- <a href="/CreateTable/"><h3 style="text-align: left;padding-left: 100px;">
+         <input type="button"> -->
+        <!-- <button type="button" style="font-size: large;">Create</button> -->
     </h3></a>
 
 </body>

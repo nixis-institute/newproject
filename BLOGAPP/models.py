@@ -1,6 +1,8 @@
 from django.db import models
 import mysql.connector
 # Create your models here.
+from datetime import datetime
+from django.contrib.auth.models import User
 
 
 db = mysql.connector.connect(user='root',password="1986",host='localhost',database="")
@@ -31,8 +33,11 @@ class BLOG_Table1(models.Model):
     title = models.CharField(max_length=100,null=True)
     contain = models.TextField()
     # auther_name = models.CharField(max_length=20)
-    author_name = models.CharField(max_length=20,null=True)
-    # Date = models.DateTimeField()
+    # author_name = models.CharField(max_length=20,null=True)
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    
+    Date = models.DateTimeField(default=datetime.now(),null=True)
+    # Tm = models.TimeField()
     # publish = models.CharField(max_length=20,choices=op,default="Private")
     def __str__(self):
         return self.title
